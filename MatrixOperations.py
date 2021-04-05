@@ -1,3 +1,5 @@
+import math
+#**************MATRIX MULTIPLCATION START***************************
 
 #function which multiplies a matrix by a scalar
 def matrix_multiply_scalar(scalar : int, matrix : list):
@@ -12,7 +14,6 @@ def matrix_multiply_scalar(scalar : int, matrix : list):
     product.append(product_row)
 
   return product
-
 
 #function which multiplies two matrices together
 def matrix_multiply(matrix_a, matrix_b):
@@ -46,7 +47,6 @@ def matrix_multiply(matrix_a, matrix_b):
 
   return AB
 
-
 def test_multiplication():
   test_cases_a = [
 
@@ -69,7 +69,54 @@ def test_multiplication():
     print(matrix_multiply(test_cases_a[i], test_cases_b[i]))
 
 
+#**************MATRIX MULTIPLCATION END***************************
+
+#**************DETERMINANT START***************************
+def compute_determinant(matrix):
+
+  determinant = 0
+  if (len(matrix) == 2 and len(matrix[0]) == 2):
+    determinant = matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0]
+
+    return determinant
+
+  for top_row_index in range(len(matrix[0])):#loop through top row elements
+    num = matrix[0][top_row_index] * int(math.pow(-1, top_row_index))
+
+    if (num == 0): #don't bother recursing, since coefficient is zero
+      continue
+
+    sub_matrix = []
+
+    for row in range(1, len(matrix)):#loop through every row(except the top)
+      sub_matrix_row = []
+
+      for col in range(len(matrix[0])):#loop through each element(column) in the row
+        if (col != top_row_index):
+          sub_matrix_row.append(matrix[row][col])
+
+      sub_matrix.append(sub_matrix_row)
+    #print(sub_matrix)
+    determinant += num * compute_determinant(sub_matrix)
+
+  return determinant
+
+def test_compute_determinant():
+
+  test_cases = [
+
+    [ [3,0,4], [2,3,2], [0,5,-1]    ],
+    [  [2,-2,3],  [3,1,2],  [1,3,-1]  ],
+    [   [4,0,0,5],  [1,7,2,-5], [3,0,0,0],  [8,3,1,7]   ],
+    [  [4,0,-7,3,-5], [0,0,2,0,0],  [7,3,-6,4,-8],  [5,0,5,2,-3], [0,0,9,-1,2]      ]
+
+  ]
+
+  for i in range(len(test_cases)):
+    print(compute_determinant(test_cases[i]))
 
 
-test_multiplication()
+test_compute_determinant()
+
+
 
