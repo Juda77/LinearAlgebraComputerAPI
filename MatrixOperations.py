@@ -68,7 +68,6 @@ def test_multiplication():
 
     print(matrix_multiply(test_cases_a[i], test_cases_b[i]))
 
-
 #**************MATRIX MULTIPLCATION END***************************
 
 #**************DETERMINANT START***************************
@@ -115,8 +114,50 @@ def test_compute_determinant():
   for i in range(len(test_cases)):
     print(compute_determinant(test_cases[i]))
 
+#**************MATRIX ADDITION START***************************
+def add_matrices(matrix_a, matrix_b):
+  if (len(matrix_a) != len(matrix_b) or len(matrix_a[0]) != len(matrix_b[0])):
+    return "Cannot add these matrices together"
 
-test_compute_determinant()
+  sum_matrix = []
+
+  for row in range(len(matrix_a)):
+    sum_matrix_curr_row = []
+    for col in range(len(matrix_a[0])):
+      sum_matrix_curr_row.append(matrix_a[row][col] + matrix_b[row][col])
+    sum_matrix.append(sum_matrix_curr_row)
+
+  return sum_matrix
+
+
+def transpose_matrix(matrix):
+
+  transposed_matrix = []
+
+  for element in range(len(matrix[0])):
+    transposed_matrix_row = []
+    transposed_matrix_row.append(matrix[0][element])
+    transposed_matrix.append(transposed_matrix_row)
+
+  for row in range(1, len(matrix)):
+
+    for col in range(len(matrix[0])):
+      transposed_matrix[col].append(matrix[row][col])
 
 
 
+  return transposed_matrix
+
+
+def test_transpose_matrix():
+  test_cases = [
+
+    [ [-5,2], [1,-3], [0,4]  ],
+    [  [1,1,1,1], [-3,5,-2,7]   ]
+
+  ]
+
+  for i in range(len(test_cases)):
+    print(transpose_matrix(test_cases[i]))
+
+test_transpose_matrix()
