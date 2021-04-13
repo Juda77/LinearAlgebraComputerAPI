@@ -22,8 +22,6 @@ class matrix_operations:
 
     return projection
 
-
-
   #input is a subspace(list of vectors)
   #output the orthonormal basis for that subspace
   #a vector, x, has the form x = [x1, x2, x3,..., xn]
@@ -52,15 +50,6 @@ class matrix_operations:
       v.append(new_v_component)
 
     return v
-
-
-
-
-
-
-
-
-  #**************MATRIX MULTIPLCATION START***************************
 
   #function which multiplies a matrix by a scalar
   @staticmethod
@@ -110,10 +99,6 @@ class matrix_operations:
 
     return AB
 
-
-  #**************MATRIX MULTIPLCATION END***************************
-
-  #**************DETERMINANT START***************************
   @staticmethod
   def compute_determinant(matrix):
 
