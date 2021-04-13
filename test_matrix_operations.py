@@ -59,6 +59,25 @@ def test_transpose_matrix():
   for i in range(len(test_cases)):
     print(matrix_operations.transpose_matrix(test_cases[i]))
 
-test_transpose_matrix()
+def test_gram_schmidt_process():
+  test_cases = [
+
+    [3,0,-1], [8,5,-6],
+    [1,-4,0,1], [7,-7,-4,1],
+    [3,1,-1,3], [-5,1,5,-7], [1,1,-2,8],
+    [1,-1,-1,1,1], [2,1,4,-4,2], [5,-4,-3,7,1]
+
+  ]
+
+  for i in range(0, 4, 2):
+    subspace = [test_cases[i], test_cases[i + 1]]
+    print(matrix_operations.gram_schmidt_process(subspace))
+
+  for i in range(4, len(test_cases), 3):
+    subspace = [test_cases[i], test_cases[i + 1], test_cases[i + 2]]
+    print(matrix_operations.gram_schmidt_process(subspace))
+
+test_gram_schmidt_process()
+
 
 

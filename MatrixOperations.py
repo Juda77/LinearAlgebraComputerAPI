@@ -15,7 +15,7 @@ class matrix_operations:
       b_dot_b += b[i] * b[i]
 
     scalar = a_dot_b / b_dot_b
-    print("scalar", scalar)
+
     projection = []
     for i in range(len(a)):
       projection.append(scalar * b[i])
@@ -28,11 +28,31 @@ class matrix_operations:
   #output the orthonormal basis for that subspace
   #a vector, x, has the form x = [x1, x2, x3,..., xn]
   #begin with span x(input), output span v
-  # def gram_schmidt_process(subspace):
+  @staticmethod
+  def gram_schmidt_process(subspace):
 
-  #   v = []
+    v = [subspace[0]]
 
-  #   for i in range(len(subspace)):
+    for i in range(1, len(subspace)):
+
+      x_vector = subspace[i]
+      orthogonal_subspace = [0] * len(x_vector)
+
+      for j in range(len(v)):
+        subspace_component = matrix_operations.compute_projection(x_vector, v[j])
+
+        for k in range(len(orthogonal_subspace)):
+          orthogonal_subspace[k] = orthogonal_subspace[k] + subspace_component[k]
+
+
+      new_v_component = []
+      for x in range(len(x_vector)):
+        new_v_component.append(x_vector[x] - orthogonal_subspace[x])
+
+      v.append(new_v_component)
+
+    return v
+
 
 
 
@@ -124,23 +144,6 @@ class matrix_operations:
 
     return determinant
 
-
-  #**************MATRIX ADDITION START***************************
-  @staticmethod
-  def add_matrices(matrix_a, matrix_b):
-    if (len(matrix_a) != len(matrix_b) or len(matrix_a[0]) != len(matrix_b[0])):
-      return "Cannot add these matrices together"
-
-    sum_matrix = []
-
-    for row in range(len(matrix_a)):
-      sum_matrix_curr_row = []
-      for col in range(len(matrix_a[0])):
-        sum_matrix_curr_row.append(matrix_a[row][col] + matrix_b[row][col])
-      sum_matrix.append(sum_matrix_curr_row)
-
-    return sum_matrix
-
   @staticmethod
   def transpose_matrix(matrix):
 
@@ -157,3 +160,18 @@ class matrix_operations:
         transposed_matrix[col].append(matrix[row][col])
 
     return transposed_matrix
+
+  @staticmethod
+  def add_matrices(matrix_a, matrix_b):
+    if (len(matrix_a) != len(matrix_b) or len(matrix_a[0]) != len(matrix_b[0])):
+      return "Cannot add these matrices together"
+
+    sum_matrix = []
+
+    for row in range(len(matrix_a)):
+      sum_matrix_curr_row = []
+      for col in range(len(matrix_a[0])):
+        sum_matrix_curr_row.append(matrix_a[row][col] + matrix_b[row][col])
+      sum_matrix.append(sum_matrix_curr_row)
+
+    return sum_matrix
