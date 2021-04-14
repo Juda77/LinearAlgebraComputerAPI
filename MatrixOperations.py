@@ -99,6 +99,50 @@ class matrix_operations:
 
     return AB
 
+  #Euclid's algorithm for finding a common multiple
+  @staticmethod
+  def __find_gcd(a, b):
+    if (b == 0):
+      return a
+    else:
+      return matrix_operations.__find_gcd(b, a % b)
+
+  #given an input matrix, perform gaussian elimination to find the solution set
+  #output will be a list of integers
+  #an example row: [x1, x2, x3, x4]
+  @staticmethod
+  def gaussian_elimination(matrix):
+
+    solution = []
+    #iterate through each column
+    for col in matrix[0]:
+
+      #iterate through each row/element in the column
+      for i in range(len(matrix) - 1):
+
+        num_1 = matrix[i][col]
+        num_2 = matrix[i + 1][col]
+
+        #find a common factor, if there is none, find a common multiple
+        gcd = matrix_operations.__find_gcd(num_1, num_2)
+        if (gcd != 1): #there is a common factor
+
+          #use the scaling row reduction technique
+          #scale the first row
+          scale = (num_1 / gcd)
+
+
+
+
+    return solution
+
+
+
+
+
+
+
+
   @staticmethod
   def compute_determinant(matrix):
 
