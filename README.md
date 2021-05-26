@@ -18,8 +18,4 @@ my own computer.
   <li>Matrix addition</li>
 </ul>
 
-<p>
-This project uses the Python programming language and Django tools to make it web-based. This computer will be integrated into my linear algebra webpage for my Math Museum website
-</p>
-
 <b>Important note:</b> Like calculus, linear algebra is awesome!
