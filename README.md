@@ -9,7 +9,6 @@ my own computer.
 </p>
 <h2>Supported Operations:</h2>
 <ul>
-  <li>Gaussian elimination</li>
   <li>Determinants</li>
   <li>Gram-Schmit Process</li>
   <li>Orthogonal projections</li>
