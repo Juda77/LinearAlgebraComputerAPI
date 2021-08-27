@@ -7,7 +7,7 @@ a lot of computer science majors in my linear algebra class, so naturally, we we
 programming skills. Even though there were already available linear algebra computers online, I thought it would be a fun challenge to try to implement
 my own computer and to implement it as a REST API so I could get practice with server side programming with Flask.
   
-This project has no front component, so it was tested with <a href="https://www.postman.com"/>shunting yard algorithm</a>
+This project has no front component, so it was tested with <a href="https://www.postman.com"/>Postman</a>
 </p>
 <h2>Supported Operations:</h2>
 <ul>
