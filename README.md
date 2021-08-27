@@ -1,7 +1,7 @@
 # Linear Algebra Computer
 
 <p>
-This is Flask API which serves as a calculator that executes linear algebra computations on matrices and vectors. Similar to how I was motivated to program my calculus computer,
+This is a Flask API which serves as a calculator that executes linear algebra computations on matrices and vectors. Similar to how I was motivated to program my calculus computer,
 I was motivated to create this linear algebra computer after having to slave away on arduous matrix computations for my math classes. There were
 a lot of computer science majors in my linear algebra class, so naturally, we were interested in how we could automate the computations using our
 programming skills. Even though there were already available linear algebra computers online, I thought it would be a fun challenge to try to implement
