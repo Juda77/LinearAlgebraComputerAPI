@@ -6,6 +6,8 @@ I was motivated to create this linear algebra computer after having to slave awa
 a lot of computer science majors in my linear algebra class, so naturally, we were interested in how we could automate the computations using our
 programming skills. Even though there were already available linear algebra computers online, I thought it would be a fun challenge to try to implement
 my own computer and to implement it as a REST API so I could get practice with server side programming with Flask.
+  
+This project has no front component, so it was tested with <a href="https://www.postman.com"/>shunting yard algorithm</a>
 </p>
 <h2>Supported Operations:</h2>
 <ul>
