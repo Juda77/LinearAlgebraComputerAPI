@@ -5,6 +5,7 @@ import math
 
 app = Flask(__name__)
 
+# orthogonal projection 
 def compute_projection(a, b):
   a_dot_b = 0
   b_dot_b = 0
@@ -24,19 +25,9 @@ def compute_projection(a, b):
 def compute_projection():
 
   matrices_json = request.json
-  a = matrices_json["a"]
-  b = matrices_json["b"]
-
-  a_dot_b = 0
-  b_dot_b = 0
-  for i in range(len(a)):
-    a_dot_b += a[i] * b[i]
-    b_dot_b += b[i] * b[i]
-  scalar = a_dot_b / b_dot_b
-  projection = []
-  for i in range(len(a)):
-    projection.append(scalar * b[i])
-
+  matrix_a = matrices_json["a"]
+  matrix_b = matrices_json["b"]
+  projection = compute_projection(matrix_a, matrix_b)
   return {"projection": projection}
 
 #input is a subspace(list of vectors)
