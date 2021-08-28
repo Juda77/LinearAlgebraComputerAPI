@@ -1,3 +1,6 @@
+# Description: This file was used to test my computer before I implemented it as a Flask API.
+# Once my computer was an API, I used Postman to test the endpoints/functionality
+
 from MatrixOperations import matrix_operations
 
 def test_compute_projection():
@@ -78,6 +81,3 @@ def test_gram_schmidt_process():
     print(matrix_operations.gram_schmidt_process(subspace))
 
 test_gram_schmidt_process()
-
-
-
