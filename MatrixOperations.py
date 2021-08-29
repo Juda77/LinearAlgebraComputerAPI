@@ -128,7 +128,7 @@ def __find_gcd(a, b):
 #given an input matrix, perform gaussian elimination to find the solution set
 #output will be a list of integers
 #an example row: [x1, x2, x3, x4]
-# poor gauss gets commented 
+# poor gauss gets eliminated(commented)
 # def gaussian_elimination(matrix):
 
 #   solution = []
