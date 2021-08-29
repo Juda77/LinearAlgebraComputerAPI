@@ -128,27 +128,28 @@ def __find_gcd(a, b):
 #given an input matrix, perform gaussian elimination to find the solution set
 #output will be a list of integers
 #an example row: [x1, x2, x3, x4]
-def gaussian_elimination(matrix):
+# poor gauss gets commented 
+# def gaussian_elimination(matrix):
 
-  solution = []
-  #iterate through each column
-  for col in matrix[0]:
+#   solution = []
+#   #iterate through each column
+#   for col in matrix[0]:
 
-    #iterate through each row/element in the column
-    for i in range(len(matrix) - 1):
+#     #iterate through each row/element in the column
+#     for i in range(len(matrix) - 1):
 
-      num_1 = matrix[i][col]
-      num_2 = matrix[i + 1][col]
+#       num_1 = matrix[i][col]
+#       num_2 = matrix[i + 1][col]
 
-      #find a common factor, if there is none, find a common multiple
-      gcd = __find_gcd(num_1, num_2)
-      if (gcd != 1): #there is a common factor
+#       #find a common factor, if there is none, find a common multiple
+#       gcd = __find_gcd(num_1, num_2)
+#       if (gcd != 1): #there is a common factor
 
-        #use the scaling row reduction technique
-        #scale the first row
-        scale = (num_1 / gcd)
+#         #use the scaling row reduction technique
+#         #scale the first row
+#         scale = (num_1 / gcd)
 
-  return solution
+#   return solution
 
 def compute_determinant(matrix):
 
